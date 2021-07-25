@@ -2,6 +2,7 @@ FROM python:3-alpine
 
 LABEL MAINTAINER="DtxdF@protonmail.com"
 RUN apk add gcc build-base
+RUN apk add --update --no-cache g++ gcc libxml2-dev libxslt-dev python-dev libffi-dev openssl-dev make
 RUN addgroup -S sopel && adduser -S sopel -G sopel
 WORKDIR /home/sopel/.sopel/plugins
 RUN mkdir /home/sopel/.sopel/data
